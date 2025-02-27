@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "module": "NodeNext",
+        "target": "ES2016",
+        "esModuleInterop": true,
+        "moduleResolution": "NodeNext",
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "skipLibCheck": true,
+        "baseUrl": "./src",
+        "outDir": "./dist",
+        "paths": {
+            "@routes/*": ["routes/*"],
+            "@controller/*": ["controller/*"],
+            "@middleware/*": ["middleware/*"],
+            "@utils/*": ["utils/*"],
+            "@config/*": ["config/*"],
+            "@infrastructure/*": ["infrastructure/*"],
+            "@database/*": ["database/*"],
+            "@validation/*": ["validation/*"],
+            "@domain/*": ["domain/*"],
+            "@model/*": ["model/*"],
+            "@types/*": ["types/*"],
+            "@service/*": ["service/*"]
+        }
+    }
+}
