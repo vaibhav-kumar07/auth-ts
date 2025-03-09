@@ -15,8 +15,6 @@ app.use(express.json());
 app.use("/api/v1/auth", v1AuthRoutes)
 app.use("/api/v1/roles", v1RoleRoutes)
 app.use("/api/v1/permissions", v1PermssionRoutes)
-
-// app.use(routes);
 app.use(errorHandler)
 
 

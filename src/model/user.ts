@@ -8,12 +8,12 @@ const UserSchema: Schema = new Schema<IUser>(
             required: true,
             trim: true,
         },
-        email: {
-            type: String,
+        phone: {
+            type: Number,
             required: true,
             unique: true,
-            lowercase: true,
-            trim: true,
+            minlength: 10,
+            maxlength: 10
         },
         password: {
             type: String,

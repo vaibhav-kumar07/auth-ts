@@ -10,11 +10,11 @@ export default class AuthService {
     private _userRepository = new UserRepository();
 
     async register(userData: Partial<IUser>) {
-        const { name, email, password, role } = userData;
+        const { name, phone, password, role } = userData;
 
-        // Check if the email is already registered
-        const existingUser = await this._userRepository.findByEmail(email as string);
-        throwBusinessError(!!existingUser, "User already exists with this email.");
+        // Check if the phone is already registered
+        const existingUser = await this._userRepository.findUser(name as string, phone as number);
+        throwBusinessError(!!existingUser, "User already exists with this phone number or name");
 
         // Hash the password
         const hashedPassword = await HashedPassword(password as string);
@@ -22,27 +22,26 @@ export default class AuthService {
         // Create the user
         const newUser = await this._userRepository.create({
             name,
-            email,
+            phone,
             password: hashedPassword,
             role,
         } as IUser);
 
         const token = generateToken({ _id: newUser._id?.toString() as string, role: newUser.role });
-
-        return { _id: newUser._id, token };
+        return { user: { name: newUser.name, role: newUser.role }, token };
     }
 
 
     async login(userData: Partial<IUser>) {
-        const { email, password } = userData;
+        const { phone, password } = userData;
 
-        // Find user by email
-        const user = await this._userRepository.findByEmail(email as string);
-        throwBusinessError(!user, "Invalid email or password");
+        // Find user by phone
+        const user = await this._userRepository.findByPhone(phone as number);
+        throwBusinessError(!user, "Invalid Phone Number or password");
 
         // Check password
         const isValidPassword = await ComparePassword(password as string, user?.password as string);
-        throwBusinessError(!isValidPassword, "Invalid email or password");
+        throwBusinessError(!isValidPassword, "Invalid Phone Number or Password");
 
         // Generate JWT token
         const token = generateToken({ _id: user?._id?.toString() as string, role: user?.role as string });
@@ -60,11 +59,11 @@ export default class AuthService {
 
         // Find user by ID
         const user = await this._userRepository.findById(userId);
-        throwBusinessError(!user, "User not found");
+        throwBusinessError(!user, "User Not found");
 
         // Verify old password
         const isMatch = await ComparePassword(oldPassword, user?.password as string);
-        throwBusinessError(!isMatch, "Incorrect old password");
+        throwBusinessError(!isMatch, "Incorrect old Password");
 
         // Hash and update new password
         user!.password = await HashedPassword(newPassword);

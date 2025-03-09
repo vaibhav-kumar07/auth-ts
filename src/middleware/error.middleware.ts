@@ -26,8 +26,13 @@ export const errorHandler = (err: any, req: Request, res: Response, next: NextFu
 
 
 
-export const asyncHandler = (fn: (req: Request, res: Response, next: NextFunction) => Promise<any>) => {
-    return (req: Request, res: Response, next: NextFunction) => {
-        Promise.resolve(fn(req, res, next)).catch(next);
+
+export const tryCatchHandler = (fn: (req: Request, res: Response, next: NextFunction) => Promise<any>) => {
+    return async (req: Request, res: Response, next: NextFunction) => {
+        try {
+            await fn(req, res, next);
+        } catch (error) {
+            next(error);
+        }
     };
 };

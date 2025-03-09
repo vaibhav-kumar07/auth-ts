@@ -4,7 +4,7 @@ import crypto from "crypto";
 import CommonVariables from "@config/index";
 
 export const HashedPassword = async (password: string): Promise<string> => {
-    return await bcrypt.hash(password, 10);
+    return bcrypt.hash(password, 10);
 };
 
 export const ComparePassword = async (password: string, hashedPassword: string): Promise<boolean> => {

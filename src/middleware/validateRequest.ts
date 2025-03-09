@@ -4,6 +4,7 @@ import { throwValidationError } from "../utils/error.utils";
 
 
 export const validateRequest = (schema: ZodSchema<any>) => {
+
     return (req: Request, res: Response, next: NextFunction) => {
         const data = { ...req.body, ...req.params, ...req.query };
         const result = schema.safeParse(data);
