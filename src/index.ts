@@ -8,6 +8,7 @@ import MongoDB from "@database/implementations/mongo/connection";
 import { errorHandler } from "@middleware/error.middleware";
 
 const app = express();
+CommonVariables.Initiate();
 const PORT = CommonVariables.PORT;
 
 MongoDB.connect();
