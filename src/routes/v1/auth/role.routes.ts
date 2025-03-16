@@ -1,9 +1,9 @@
 import { Router } from "express";
-import * as rediController from "@controller/role-controller";
-import { authorizeRole } from "@middleware/authorizer.middleware";
-import { tryCatchHandler } from "@middleware/error.middleware";
-import { validateRequest } from "@middleware/validateRequest";
-import { createRoleSchema, getRoleByNameSchema } from "@validation/roleAndPermission";
+import * as rediController from "../../../controller/role-controller";
+import { authorizeRole } from "../../../middleware/authorizer.middleware";
+import { tryCatchHandler } from "../../../middleware/error.middleware";
+import { validateRequest } from "../../../middleware/validateRequest";
+import { createRoleSchema, getRoleByNameSchema } from "../../../validation/roleAndPermission";
 
 const router = Router();
 

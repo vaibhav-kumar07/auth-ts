@@ -1,4 +1,4 @@
-import { validateRequest } from "@middleware/validateRequest";
+
 import { z } from "zod";
 
 export const createRoleSchema = z.object({

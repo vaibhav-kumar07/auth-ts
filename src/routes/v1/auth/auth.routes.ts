@@ -1,9 +1,9 @@
 import express from 'express';
-import { validateRequest } from '@middleware/validateRequest';
-import { changePasswordSchema, loginSchema, registerSchema } from "@validation/auth-validation";
-import * as AuthController from "@controller/auth-controller"
-import { authenticate } from '@middleware/authorizer.middleware';
-import { tryCatchHandler } from '@middleware/error.middleware';
+import { validateRequest } from '../../../middleware/validateRequest';
+import { changePasswordSchema, loginSchema, registerSchema } from "../../../validation/auth-validation";
+import * as AuthController from "../../../controller/auth-controller"
+import { authenticate } from '../../../middleware/authorizer.middleware';
+import { tryCatchHandler } from '../../../middleware/error.middleware';
 
 const router = express.Router();
 

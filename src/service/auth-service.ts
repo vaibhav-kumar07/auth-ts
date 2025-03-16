@@ -1,8 +1,8 @@
-import { IUser } from "types/user";
+import { IUser } from "../types/user";
 import { throwBusinessError } from "../utils/error.utils";
 import { ComparePassword, generateToken, HashedPassword } from "../utils/helper";
-import { UserRepository } from "@database/repositories/user-repo";
-import RoleRedisUtils from "@utils/role.redis";
+import { UserRepository } from "../database/repositories/user-repo";
+import RoleRedisUtils from "../utils/role.redis";
 
 
 

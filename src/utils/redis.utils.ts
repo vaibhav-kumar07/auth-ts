@@ -1,4 +1,4 @@
-import RedisDB from "@database/implementations/redis/connection";
+import RedisDB from "../database/implementations/redis/connection";
 RedisDB.connect()
 const redisClient = RedisDB.getClient();
 

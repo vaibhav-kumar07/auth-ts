@@ -1,5 +1,5 @@
-import RoleModel from "@model/role";
-import { IRole } from "types/role";
+import RoleModel from "../../model/role";
+import { IRole } from "../../types/role";
 
 export class RoleRepository {
 

@@ -1,5 +1,5 @@
 import RedisUtils from "./redis.utils";
-import RoleModel from "@model/role";
+import RoleModel from "../model/role";
 
 export default class RoleRedisUtils {
 

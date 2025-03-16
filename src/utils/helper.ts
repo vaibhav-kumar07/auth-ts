@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import crypto from "crypto";
-import CommonVariables from "@config/index";
+import CommonVariables from "../config/index";
 
 export const HashedPassword = async (password: string): Promise<string> => {
     return bcrypt.hash(password, 10);

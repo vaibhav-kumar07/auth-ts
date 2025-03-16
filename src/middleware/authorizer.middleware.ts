@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
-import { verifyToken } from "@utils/helper";
-import RoleRedisUtils from "@utils/role.redis";
+import { verifyToken } from "../utils/helper";
+import RoleRedisUtils from "../utils/role.redis";
 
 
 

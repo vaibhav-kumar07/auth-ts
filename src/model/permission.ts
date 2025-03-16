@@ -1,4 +1,4 @@
-import { IPermission } from "types/permission";
+import { IPermission } from "../types/permission";
 import mongoose, { Schema, Document } from "mongoose";
 
 

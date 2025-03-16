@@ -1,6 +1,6 @@
-import { PermissionRepository } from "@database/repositories/permission-repo";
-import { throwBusinessError } from "@utils/error.utils";
-import { IPermission } from "types/permission";
+import { PermissionRepository } from "../database/repositories/permission-repo";
+import { throwBusinessError } from "../utils/error.utils";
+import { IPermission } from "../types/permission";
 
 export default class PermissionService {
     private permissionRepository = new PermissionRepository();

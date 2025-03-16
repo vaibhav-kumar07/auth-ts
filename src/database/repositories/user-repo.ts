@@ -1,5 +1,5 @@
-import UserModel from "@model/user";
-import { IUser } from "types/user";
+import UserModel from "../../model/user";
+import { IUser } from "../../types/user";
 
 export class UserRepository {
 

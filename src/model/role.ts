@@ -1,4 +1,4 @@
-import { IRole } from "types/role";
+import { IRole } from "../types/role";
 import mongoose, { Schema, Document } from "mongoose";
 
 

@@ -1,7 +1,5 @@
 import Redis from "ioredis";
 import CommonVariables from "../../../config";
-import { optional } from "zod";
-import { options } from "axios";
 
 export default class RedisDB {
     private static client: Redis | null = null;

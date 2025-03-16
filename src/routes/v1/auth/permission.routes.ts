@@ -1,8 +1,8 @@
 import { Router } from "express";
-import * as permissionController from "@controller/permission-controller";
-import { authorizeRole } from "@middleware/authorizer.middleware";
-import { validateRequest } from "@middleware/validateRequest";
-import { createPermissionSchema, createRoleSchema, getPermissionByNameSchema, } from "@validation/roleAndPermission";
+import * as permissionController from "../../../controller/permission-controller";
+import { authorizeRole } from "../../../middleware/authorizer.middleware";
+import { validateRequest } from "../../../middleware/validateRequest";
+import { createPermissionSchema, createRoleSchema, getPermissionByNameSchema, } from "../../../validation/roleAndPermission";
 
 
 const router = Router();

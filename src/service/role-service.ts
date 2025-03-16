@@ -1,8 +1,7 @@
-import { RoleRepository } from "@database/repositories/role-repo";
-import RoleRedisUtils from "@utils/role.redis";
-import PermissionModel from "@model/permission";
-import { IRole } from "types/role";
-import { BusinessError, throwBusinessError } from "@utils/error.utils";
+import { RoleRepository } from "../database/repositories/role-repo";
+import RoleRedisUtils from "../utils/role.redis";
+import { IRole } from "../types/role";
+import {  throwBusinessError } from "../utils/error.utils";
 
 export default class RoleService {
     private roleRepository = new RoleRepository();

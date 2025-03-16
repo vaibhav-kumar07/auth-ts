@@ -1,5 +1,5 @@
-import PermissionModel from "@model/permission";
-import { IPermission } from "types/permission";
+import PermissionModel from "../../model/permission";
+import { IPermission } from "../../types/permission";
 
 export class PermissionRepository {
 

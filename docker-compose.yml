@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+  auth_service:
+    build: .
+    container_name: auth_service
+    ports:
+      - "6002:6002"
+    env_file:
+      - .env
+    depends_on:
+      - mongodb
+      - redis
+    networks:
+      - auth_network
+
+  mongodb:
+    image: mongo:6.0
+    container_name: mongodb_auth
+    restart: always
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongo_data_auth:/data/db
+    networks:
+      - auth_network
+
+  redis:
+    image: redis:alpine
+    container_name: redis_auth
+    restart: always
+    ports:
+      - "6380:6379"
+    networks:
+      - auth_network
+
+networks:
+  auth_network:
+
+volumes:
+  mongo_data_auth:
